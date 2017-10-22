@@ -175,7 +175,7 @@ void CStack<T>::resize(std::size_t new_size){
     std::copy(begin, curr, new_begin);
 
     curr = new_begin + size();
-    delete[] begin;
+    delete[] (begin - 1);
     begin = new_begin;
     end = begin + new_size;
     stack_hash = get_stack_hash();
